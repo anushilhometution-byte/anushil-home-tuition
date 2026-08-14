@@ -1,3 +1,253 @@
-*{box-sizing:border-box}
-body{margin:0;background:#f4f4f4;color:#111;font-family:Arial,'Noto Sans Devanagari',sans-serif}
-.logo img{width:56px;height:56px;object-fit:contain;border-radius:10px;display:block}
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ANUSHIL HOME TUITION</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="brand">
+      <img src="./tuition-logo.png" alt="ANUSHIL HOME TUITION">
+      <div>
+        <h1>ANUSHIL HOME TUITION</h1>
+        <p>Education For Everyone</p>
+      </div>
+    </div>
+
+    <button class="menu-btn" onclick="openMenu()">☰</button>
+
+  </header>
+
+
+  <!-- MENU -->
+  <div id="menu" class="menu">
+
+    <button onclick="closeMenu()">✕ बंद करें</button>
+
+    <a href="#home">🏠 Home</a>
+    <a href="#courses">📚 Courses</a>
+    <a href="#live">🎥 Live Classes</a>
+    <a href="#tests">📝 Test Series</a>
+    <a href="#materials">📖 Study Material</a>
+    <a href="#jobs">📢 Job Alerts</a>
+    <a href="#blogs">📰 Blogs</a>
+    <a href="#contact">📞 Contact</a>
+
+  </div>
+
+
+  <!-- HOME -->
+  <main id="home">
+
+    <section class="hero">
+
+      <h2>ANUSHIL HOME TUITION</h2>
+
+      <p>
+        घर बैठे बेहतर शिक्षा प्राप्त करें।
+      </p>
+
+      <button onclick="showMessage('Courses')">
+        Courses देखें
+      </button>
+
+    </section>
+
+
+    <!-- PROGRAMMES -->
+    <section id="courses" class="section">
+
+      <h2>📚 हमारे Programmes</h2>
+
+      <div class="grid">
+
+        <div class="card" onclick="openProgramme('Paid Classes')">
+          <span>🎓</span>
+          <h3>Paid Classes</h3>
+          <p>हमारे सभी paid courses देखें</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Live Classes')">
+          <span>🎥</span>
+          <h3>Live Classes</h3>
+          <p>Live classes में शामिल हों</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Free Courses')">
+          <span>📖</span>
+          <h3>Free Courses</h3>
+          <p>Free में पढ़ाई शुरू करें</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Test Series')">
+          <span>📝</span>
+          <h3>Paid Test Series</h3>
+          <p>Online test series</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Weekly Test')">
+          <span>🧪</span>
+          <h3>Free Weekly Test</h3>
+          <p>हर सप्ताह नया test</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Previous Papers')">
+          <span>📄</span>
+          <h3>Previous Years Papers</h3>
+          <p>पुराने प्रश्न पत्र</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Books')">
+          <span>📚</span>
+          <h3>Books</h3>
+          <p>Study books देखें</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Books Demo')">
+          <span>📕</span>
+          <h3>Books Demo</h3>
+          <p>Books का demo देखें</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Job Alerts')">
+          <span>📢</span>
+          <h3>Job Alerts</h3>
+          <p>नई vacancies की जानकारी</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Blogs')">
+          <span>📰</span>
+          <h3>Blogs</h3>
+          <p>Education से जुड़े blogs</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('PDF Notes')">
+          <span>📑</span>
+          <h3>PDF Class Notes</h3>
+          <p>Class notes डाउनलोड करें</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Syllabus')">
+          <span>📘</span>
+          <h3>Syllabus</h3>
+          <p>सभी subjects का syllabus</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Create Test')">
+          <span>✏️</span>
+          <h3>Create Test</h3>
+          <p>अपना test बनाएँ</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Quiz')">
+          <span>❓</span>
+          <h3>Quiz</h3>
+          <p>Quiz खेलें और score देखें</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Time Table')">
+          <span>🕐</span>
+          <h3>Time Table</h3>
+          <p>अपना timetable देखें</p>
+        </div>
+
+        <div class="card" onclick="openProgramme('Score Calculator')">
+          <span>🏆</span>
+          <h3>Score & Rank Calculator</h3>
+          <p>अपना score calculate करें</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LIVE -->
+    <section id="live" class="section">
+      <h2>🎥 Live Classes</h2>
+      <p>यहाँ आपकी live classes दिखाई जाएँगी।</p>
+    </section>
+
+
+    <!-- TESTS -->
+    <section id="tests" class="section">
+      <h2>📝 Test Series</h2>
+      <p>यहाँ online tests उपलब्ध होंगे।</p>
+    </section>
+
+
+    <!-- MATERIAL -->
+    <section id="materials" class="section">
+      <h2>📖 Study Material</h2>
+      <p>यहाँ PDF, Notes और Books उपलब्ध होंगे।</p>
+    </section>
+
+
+    <!-- JOBS -->
+    <section id="jobs" class="section">
+      <h2>📢 Job Alerts</h2>
+      <p>नई job और vacancy की जानकारी यहाँ मिलेगी।</p>
+    </section>
+
+
+    <!-- BLOG -->
+    <section id="blogs" class="section">
+      <h2>📰 Blogs</h2>
+      <p>Education और career से जुड़े blogs यहाँ होंगे।</p>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>📞 Contact Us</h2>
+
+      <p>ANUSHIL HOME TUITION से संपर्क करें।</p>
+
+      <button onclick="showMessage('Contact')">
+        Contact करें
+      </button>
+    </section>
+
+  </main>
+
+
+  <!-- PROGRAMME POPUP -->
+  <div id="popup" class="popup">
+
+    <div class="popup-box">
+
+      <button class="close" onclick="closeProgramme()">✕</button>
+
+      <h2 id="popupTitle"></h2>
+
+      <p id="popupText"></p>
+
+      <button onclick="showMessage('Coming Soon')">
+        आगे बढ़ें
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>© 2026 ANUSHIL HOME TUITION</p>
+
+  </footer>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
