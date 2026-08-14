@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111"><link rel="stylesheet" href="style.css"><title>ANUSHIL HOME TUITION</title></head>
+<body>
+<header><div class="brand"><div class="logo">AHT</div><div><b>ANUSHIL HOME TUITION</b><small>Strong Foundation, Bright Future</small></div></div><button onclick="toggleMenu()">☰</button></header>
+<div id="drawer"><button onclick="page('home')">🏠 Home</button><button onclick="page('courses')">📚 Courses</button><button onclick="page('material')">📖 Material</button><button onclick="page('test')">📝 Tests</button><button onclick="page('schedule')">📅 Schedule</button><button onclick="page('profile')">👤 Profile</button><button onclick="page('admin')">⚙️ Admin Demo</button></div>
+<main>
+<section id="home" class="active"><div class="hero"><span>ADMISSIONS OPEN</span><h1>मजबूत नींव, उज्ज्वल भविष्य</h1><p>Personalized Home Tuition • One-to-One • Small Group Classes</p><button onclick="page('courses')">Courses देखें</button></div><div class="cards"><div>📚<b>Study Material</b><small>Notes & PDFs</small></div><div>📝<b>Online Tests</b><small>Auto Result</small></div><div>📊<b>Progress</b><small>Performance tracking</small></div><div>🔔<b>Notice</b><small>Latest updates</small></div></div><article><h3>Latest Notice</h3><p id="notice">Admission और demo class उपलब्ध है।</p></article></section>
+<section id="courses"><h2>📚 Courses</h2><div id="courseList"></div></section>
+<section id="material"><h2>📖 Study Material</h2><div id="materialList"></div></section>
+<section id="test"><h2>📝 Online Test</h2><div id="quiz"></div><button onclick="submitQuiz()">Submit Test</button><h3 id="score"></h3></section>
+<section id="schedule"><h2>📅 Class Schedule</h2><table><thead><tr><th>Day</th><th>Class</th><th>Time</th></tr></thead><tbody id="scheduleList"></tbody></table></section>
+<section id="profile"><h2>👤 Student Profile</h2><input id="name" placeholder="Student Name"><input id="cls" placeholder="Class"><input id="phone" placeholder="Mobile Number"><button onclick="saveProfile()">Save Profile</button><article id="savedProfile"></article></section>
+<section id="admin"><h2>⚙️ Admin Panel (Demo)</h2><p class="warn">यह local demo admin panel है। Real cloud login/database/payment को live करने के लिए server credentials आवश्यक होंगे।</p><input id="noticeInput" placeholder="New notice"><button onclick="saveNotice()">Publish Notice</button><h3>Manage Demo</h3><button onclick="resetData()">Reset Local Data</button></section>
+<section id="contact"><h2>📞 Contact</h2><article><b>ANUSHIL HOME TUITION</b><p>📍 Sammopur, Sidhari, Azamgarh, Uttar Pradesh – 276001</p><p>📧 anushilhometution@gmail.com</p><p>📱 9956108694</p><a href="tel:9956108694">Call Now</a> <a href="mailto:anushilhometution@gmail.com">Email</a></article></section>
+</main>
+<nav><button onclick="page('home')">🏠<small>Home</small></button><button onclick="page('courses')">📚<small>Courses</small></button><button onclick="page('test')">📝<small>Test</small></button><button onclick="page('material')">📖<small>Material</small></button><button onclick="page('contact')">📞<small>Contact</small></button></nav>
+<script src="app.js"></script></body></html>
