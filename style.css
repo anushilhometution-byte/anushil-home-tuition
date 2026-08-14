@@ -1,67 +1,380 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: #f5f7fb;
-  color: #172033;
-  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #111;
+  font-family: Arial, "Noto Sans Devanagari", sans-serif;
+  line-height: 1.5;
 }
 
-.header {
-  background: white;
-  padding: 15px;
+/* ================= HEADER ================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #111;
+  color: white;
+  min-height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 12px 24px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
+.brand .logo,
 .brand img {
-  width: 50px;
-  height: 50px;
+  width: 58px !important;
+  height: 58px !important;
+  max-width: 58px !important;
+  max-height: 58px !important;
   object-fit: contain;
+  border-radius: 12px;
 }
 
-.menu-btn {
-  background: #172033;
-  color: white;
-  border: 0;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 22px;
+.brand h1,
+.brand strong {
+  font-size: 20px;
+  font-weight: 700;
 }
+
+.brand p,
+.brand span {
+  display: block;
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* ================= NAV ================= */
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav button {
+  border: 0;
+  background: transparent;
+  color: white;
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  color: #f5a623;
+}
+
+/* ================= MAIN ================= */
+
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px 100px;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+  margin-bottom: 25px;
+}
+
+section:not(.hero) {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+section h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+section p {
+  color: #555;
+}
+
+/* ================= HERO ================= */
 
 .hero {
-  margin: 20px;
-  padding: 40px 20px;
+  background: #111;
+  color: white;
+  border-radius: 28px;
+  padding: 42px 35px;
+  margin-bottom: 25px;
+}
+
+.hero span {
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 8px 18px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #eee;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.hero button {
+  background: white;
+  color: #111;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= CARDS ================= */
+
+.cards,
+.features,
+.dashboard,
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.card,
+.feature,
+.quick-card {
+  background: white;
   border-radius: 20px;
-  background: #172033;
+  padding: 25px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.card h2,
+.card h3,
+.feature h2,
+.feature h3 {
+  margin-bottom: 8px;
+}
+
+.card p,
+.feature p {
+  color: #666;
+}
+
+/* ================= BUTTON ================= */
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 6px 0 12px;
+  font-size: 15px;
+}
+
+/* ================= TABLE ================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  background: #111;
   color: white;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 20px;
-}
+/* ================= NOTICE ================= */
 
-.card {
+.notice {
   background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.1);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
 }
 
-@media (max-width: 500px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
+.notice h2 {
+  margin-bottom: 10px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 30px 20px 90px;
+  margin-top: 30px;
+}
+
+footer p {
+  color: #ccc;
+}
+
+/* ================= BOTTOM NAV ================= */
+
+body > nav:last-of-type {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  background: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 4px;
+  box-shadow: 0 -3px 15px rgba(0,0,0,0.08);
+}
+
+body > nav:last-of-type button {
+  color: #111;
+  font-size: 12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  header {
+    min-height: 78px;
+    padding: 10px 18px;
+  }
+
+  .brand .logo,
+  .brand img {
+    width: 54px !important;
+    height: 54px !important;
+    max-width: 54px !important;
+    max-height: 54px !important;
+  }
+
+  .brand h1,
+  .brand strong {
+    font-size: 17px;
+  }
+
+  .brand p,
+  .brand span {
+    font-size: 11px;
+  }
+
+  nav:not(body > nav:last-of-type) {
+    display: none;
+  }
+
+  main {
+    padding: 22px 16px 90px;
+  }
+
+  .hero {
+    padding: 32px 24px;
+    border-radius: 25px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cards,
+  .features,
+  .dashboard,
+  .quick-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card,
+  .feature,
+  .quick-card {
+    padding: 18px 14px;
+    border-radius: 17px;
+  }
+
+  .card h2,
+  .card h3,
+  .feature h2,
+  .feature h3 {
+    font-size: 18px;
+  }
+
+  section:not(.hero) {
+    padding: 20px 16px;
+  }
+
+  section h2 {
+    font-size: 22px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 9px 6px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .cards,
+  .features,
+  .dashboard,
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 26px;
   }
 }
