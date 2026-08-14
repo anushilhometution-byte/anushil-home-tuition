@@ -286,8 +286,6 @@ function openMaterial(index) {
   }
 
 }
-}
-
 
 // ===============================
 // PAGE LOAD
