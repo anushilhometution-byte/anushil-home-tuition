@@ -32,6 +32,50 @@ const courses = [
 
 
 // ===============================
+// STUDY MATERIAL
+// ===============================
+
+const materials = [
+  {
+    title: "Mathematics Notes",
+    type: "PDF Notes",
+    icon: "📐",
+    description: "Chapter-wise Mathematics notes aur practice material."
+  },
+  {
+    title: "Science Notes",
+    type: "PDF Notes",
+    icon: "🔬",
+    description: "Important concepts, definitions aur revision notes."
+  },
+  {
+    title: "English Grammar",
+    type: "Study Material",
+    icon: "📖",
+    description: "Grammar rules, examples aur practice questions."
+  },
+  {
+    title: "Hindi Notes",
+    type: "Study Material",
+    icon: "📚",
+    description: "Hindi grammar aur chapter revision material."
+  },
+  {
+    title: "Previous Year Papers",
+    type: "Question Papers",
+    icon: "📝",
+    description: "Previous year questions ki practice."
+  },
+  {
+    title: "Practice Worksheets",
+    type: "Worksheets",
+    icon: "📄",
+    description: "Daily practice ke liye worksheets."
+  }
+];
+
+
+// ===============================
 // PAGE NAVIGATION
 // ===============================
 
@@ -51,9 +95,12 @@ function page(sectionId) {
     selected.classList.add("active");
   }
 
-  // Courses open hone par cards create karo
   if (sectionId === "courses") {
     showCourses();
+  }
+
+  if (sectionId === "material") {
+    showMaterials();
   }
 
   window.scrollTo({
@@ -82,7 +129,7 @@ function showCourses() {
     <div class="course-grid">
 
       ${courses.map((course, index) => `
-        
+
         <div class="course-card">
 
           <div class="course-icon">🎓</div>
@@ -110,10 +157,6 @@ function showCourses() {
 }
 
 
-// ===============================
-// COURSE DETAILS
-// ===============================
-
 function courseDetails(index) {
 
   const course = courses[index];
@@ -130,11 +173,71 @@ function courseDetails(index) {
 
 
 // ===============================
+// MATERIAL
+// ===============================
+
+function showMaterials() {
+
+  const section = document.getElementById("material");
+
+  if (!section) return;
+
+  section.innerHTML = `
+    <div class="section-heading">
+      <h2>📚 Study Material</h2>
+      <p>Notes, PDFs aur practice material</p>
+    </div>
+
+    <div class="material-grid">
+
+      ${materials.map((material, index) => `
+
+        <div class="material-card">
+
+          <div class="material-icon">
+            ${material.icon}
+          </div>
+
+          <div>
+            <span class="material-type">
+              ${material.type}
+            </span>
+
+            <h3>${material.title}</h3>
+
+            <p>${material.description}</p>
+
+            <button onclick="openMaterial(${index})">
+              📖 Open Material
+            </button>
+          </div>
+
+        </div>
+
+      `).join("")}
+
+    </div>
+  `;
+}
+
+
+function openMaterial(index) {
+
+  const material = materials[index];
+
+  alert(
+    material.title +
+    "\n\n" +
+    material.description +
+    "\n\nActual PDF upload hone ke baad yahan PDF open/download hoga."
+  );
+}
+
+
+// ===============================
 // PAGE LOAD
 // ===============================
 
 document.addEventListener("DOMContentLoaded", function () {
-
   page("home");
-
 });
