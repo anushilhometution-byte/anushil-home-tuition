@@ -79,6 +79,12 @@ const materials = [
     description: "Class 5 Mathematics chapter-wise notes and practice questions."
   },
   {
+  title: "Class 6 NCERT Geography",
+  type: "NCERT Book",
+  icon: "🌍",
+  description: "Class 6 NCERT Geography chapter-wise study material."
+},
+  {
     title: "Class 6 Mathematics PDF",
     type: "PDF Notes",
     icon: "📘",
