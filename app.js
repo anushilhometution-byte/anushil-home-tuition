@@ -1,36 +1,168 @@
-const data={
-courses:[
-["Class 1–5","Foundation • Maths • English • EVS • Hindi"],
-["Class 6–8","CBSE / ICSE • Maths • Science • English • SST"],
-["Class 9–10","Board-focused preparation"],
-["CHS / NVS / Sainik School","Entrance preparation"]
-],
-materials:[
-["Mathematics","Chapter-wise practice material"],
-["Science","Notes, definitions & revision"],
-["English","Grammar & comprehension"],
-["Hindi","व्याकरण एवं अभ्यास"]
-],
-schedule:[["Monday","Class 6–8","5:00 PM"],["Tuesday","Class 9–10","6:00 PM"],["Wednesday","Class 6–8","5:00 PM"],["Thursday","Class 9–10","6:00 PM"]]
-};
-const questions=[
-["12 × 5 = ?",["50","60","70","80"],1],
-["भारत की राजधानी क्या है?",["मुंबई","दिल्ली","लखनऊ","पटना"],1],
-["Noun का अर्थ क्या है?",["नाम","काम","गुण","सम्बन्ध"],0],
-["2, 4, 6, 8, ?",["9","10","11","12"],1],
-["पौधे भोजन किस प्रक्रिया से बनाते हैं?",["श्वसन","प्रकाश संश्लेषण","पाचन","उत्सर्जन"],1]
-];
-function page(id){document.querySelectorAll("main section").forEach(s=>s.classList.remove("active"));document.getElementById(id).classList.add("active");document.getElementById("drawer").classList.remove("open");scrollTo(0,0)}
-function toggleMenu(){document.getElementById("drawer").classList.toggle("open")}
-function render(){
-courseList.innerHTML=data.courses.map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
-materialList.innerHTML=data.materials.map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
-scheduleList.innerHTML=data.schedule.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td></tr>`).join("");
-quiz.innerHTML=questions.map((x,i)=>`<div class="question"><b>Q${i+1}. ${x[0]}</b>${x[1].map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${o}</label>`).join("")}</div>`).join("");
+function page(name) {
+  const sections = [
+    "home",
+    "courses",
+    "material",
+    "test",
+    "schedule",
+    "profile",
+    "admin",
+    "contact"
+  ];
+
+  sections.forEach(function(id) {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.style.display = "none";
+    }
+  });
+
+  const selected = document.getElementById(name);
+
+  if (selected) {
+    selected.style.display = "block";
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 }
-function submitQuiz(){let s=0;questions.forEach((x,i)=>{let r=document.querySelector(`input[name=q${i}]:checked`);if(r&&+r.value===x[2])s++});score.textContent=`आपका स्कोर: ${s}/${questions.length}`}
-function saveProfile(){let p={name:name.value,cls:cls.value,phone:phone.value};localStorage.setItem("aht_profile",JSON.stringify(p));showProfile()}
-function showProfile(){let p=JSON.parse(localStorage.getItem("aht_profile")||"null");savedProfile.innerHTML=p?`<p><b>${p.name}</b><br>Class: ${p.cls||"—"}<br>Mobile: ${p.phone||"—"}</p>`:""}
-function saveNotice(){let n=noticeInput.value.trim();if(!n)return;localStorage.setItem("aht_notice",n);notice.textContent=n;noticeInput.value=""}
-function resetData(){localStorage.clear();location.reload()}
-let n=localStorage.getItem("aht_notice");if(n)notice.textContent=n;render();showProfile();
+
+
+/* Website open hone par Home dikhe */
+document.addEventListener("DOMContentLoaded", function() {
+  page("home");
+});
+
+
+/* Online Test */
+function submitQuiz() {
+  let score = 0;
+
+  const answers = {
+    q1: "60",
+    q2: "delhi",
+    q3: "gun",
+    q4: "10",
+    q5: "prashn"
+  };
+
+  Object.keys(answers).forEach(function(question) {
+    const selected = document.querySelector(
+      'input[name="' + question + '"]:checked'
+    );
+
+    if (selected && selected.value === answers[question]) {
+      score++;
+    }
+  });
+
+  alert(
+    "Test Complete!\n\n" +
+    "Your Score: " +
+    score +
+    " / 5"
+  );
+}
+
+
+/* Student Profile */
+function saveProfile() {
+  const name = document.getElementById("studentName");
+  const mobile = document.getElementById("studentMobile");
+  const className = document.getElementById("studentClass");
+
+  if (!name || !mobile || !className) {
+    alert("Profile form नहीं मिला।");
+    return;
+  }
+
+  const profile = {
+    name: name.value,
+    mobile: mobile.value,
+    className: className.value
+  };
+
+  localStorage.setItem(
+    "studentProfile",
+    JSON.stringify(profile)
+  );
+
+  alert("Student Profile Save हो गया ✅");
+}
+
+
+/* Saved Profile Load */
+function loadProfile() {
+  const saved = localStorage.getItem("studentProfile");
+
+  if (!saved) return;
+
+  const profile = JSON.parse(saved);
+
+  const name = document.getElementById("studentName");
+  const mobile = document.getElementById("studentMobile");
+  const className = document.getElementById("studentClass");
+
+  if (name) name.value = profile.name || "";
+  if (mobile) mobile.value = profile.mobile || "";
+  if (className) className.value = profile.className || "";
+}
+
+
+/* Notice */
+function publishNotice() {
+  const input = document.getElementById("noticeInput");
+
+  if (!input || input.value.trim() === "") {
+    alert("पहले Notice लिखो।");
+    return;
+  }
+
+  localStorage.setItem(
+    "latestNotice",
+    input.value.trim()
+  );
+
+  alert("Notice Publish हो गया ✅");
+
+  input.value = "";
+}
+
+
+/* Notice Load */
+function loadNotice() {
+  const notice = localStorage.getItem("latestNotice");
+
+  if (!notice) return;
+
+  const box = document.getElementById("latestNotice");
+
+  if (box) {
+    box.textContent = notice;
+  }
+}
+
+
+/* Local Data Reset */
+function resetData() {
+  const confirmReset = confirm(
+    "क्या आप सभी saved local data delete करना चाहते हैं?"
+  );
+
+  if (!confirmReset) return;
+
+  localStorage.clear();
+
+  alert("Data Reset हो गया ✅");
+
+  location.reload();
+}
+
+
+/* Page load */
+document.addEventListener("DOMContentLoaded", function() {
+  loadProfile();
+  loadNotice();
+});
