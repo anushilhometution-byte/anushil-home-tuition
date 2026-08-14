@@ -273,12 +273,18 @@ function openMaterial(index) {
 
   const material = materials[index];
 
-  alert(
-    material.title +
-    "\n\n" +
-    material.description +
-    "\n\nActual PDF upload hone ke baad yahan PDF open/download hoga."
-  );
+  if (material.link) {
+    window.open(material.link, "_blank");
+  } else {
+    alert(
+      material.title +
+      "\n\n" +
+      material.description +
+      "\n\nPDF link abhi add nahi kiya gaya."
+    );
+  }
+
+}
 }
 
 
