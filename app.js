@@ -71,6 +71,48 @@ const materials = [
     type: "Worksheets",
     icon: "📄",
     description: "Daily practice ke liye worksheets."
+  },
+    {
+    title: "Class 5 Mathematics PDF",
+    type: "PDF Notes",
+    icon: "📘",
+    description: "Class 5 Mathematics chapter-wise notes and practice questions."
+  },
+  {
+    title: "Class 6 Mathematics PDF",
+    type: "PDF Notes",
+    icon: "📘",
+    description: "Class 6 Mathematics complete study material."
+  },
+  {
+    title: "Class 7 Science PDF",
+    type: "PDF Notes",
+    icon: "🔬",
+    description: "Class 7 Science important concepts and revision notes."
+  },
+  {
+    title: "Class 8 Science PDF",
+    type: "PDF Notes",
+    icon: "🔬",
+    description: "Class 8 Science chapter-wise study material."
+  },
+  {
+    title: "Class 9 Mathematics PDF",
+    type: "PDF Notes",
+    icon: "📐",
+    description: "Class 9 Mathematics notes and practice material."
+  },
+  {
+    title: "Class 10 Mathematics PDF",
+    type: "PDF Notes",
+    icon: "📐",
+    description: "Class 10 Mathematics board preparation notes."
+  },
+  {
+    title: "Class 10 Science PDF",
+    type: "PDF Notes",
+    icon: "🧪",
+    description: "Class 10 Science complete revision material."
   }
 ];
 
