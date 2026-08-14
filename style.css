@@ -378,3 +378,44 @@ body > nav:last-of-type button {
     font-size: 26px;
   }
 }
+/* ===== TOP MENU ===== */
+
+header + nav {
+  width: 100%;
+  background: #111;
+  padding: 10px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  border-top: 1px solid #333;
+}
+
+header + nav button {
+  background: #222 !important;
+  color: white !important;
+  border: 1px solid #444 !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+header + nav button:hover {
+  background: #333 !important;
+  border-color: #f5a623 !important;
+}
+
+/* Mobile top menu */
+
+@media (max-width: 700px) {
+  header + nav {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  header + nav button {
+    padding: 8px 10px !important;
+    font-size: 12px !important;
+  }
+}
