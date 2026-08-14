@@ -83,7 +83,7 @@ const materials = [
   type: "NCERT Book",
   icon: "🌍",
  description: "Class 6 NCERT Geography chapter-wise study material.",
-link: "NCERT%20BOOK/Class%206/Geography/"
+link: "NCERT%20BOOK/Class%206/Geography/%E0%A4%AA%E0%A4%BE%E0%A4%A0%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%AE(Syllabus).pdf"
 },
   {
     title: "Class 6 Mathematics PDF",
