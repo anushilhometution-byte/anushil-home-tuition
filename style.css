@@ -1,253 +1,291 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ANUSHIL HOME TUITION</title>
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-
-    <div class="brand">
-      <img src="./tuition-logo.png" alt="ANUSHIL HOME TUITION">
-      <div>
-        <h1>ANUSHIL HOME TUITION</h1>
-        <p>Education For Everyone</p>
-      </div>
-    </div>
-
-    <button class="menu-btn" onclick="openMenu()">☰</button>
-
-  </header>
-
-
-  <!-- MENU -->
-  <div id="menu" class="menu">
-
-    <button onclick="closeMenu()">✕ बंद करें</button>
-
-    <a href="#home">🏠 Home</a>
-    <a href="#courses">📚 Courses</a>
-    <a href="#live">🎥 Live Classes</a>
-    <a href="#tests">📝 Test Series</a>
-    <a href="#materials">📖 Study Material</a>
-    <a href="#jobs">📢 Job Alerts</a>
-    <a href="#blogs">📰 Blogs</a>
-    <a href="#contact">📞 Contact</a>
-
-  </div>
-
-
-  <!-- HOME -->
-  <main id="home">
-
-    <section class="hero">
-
-      <h2>ANUSHIL HOME TUITION</h2>
-
-      <p>
-        घर बैठे बेहतर शिक्षा प्राप्त करें।
-      </p>
-
-      <button onclick="showMessage('Courses')">
-        Courses देखें
-      </button>
-
-    </section>
-
-
-    <!-- PROGRAMMES -->
-    <section id="courses" class="section">
-
-      <h2>📚 हमारे Programmes</h2>
-
-      <div class="grid">
-
-        <div class="card" onclick="openProgramme('Paid Classes')">
-          <span>🎓</span>
-          <h3>Paid Classes</h3>
-          <p>हमारे सभी paid courses देखें</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Live Classes')">
-          <span>🎥</span>
-          <h3>Live Classes</h3>
-          <p>Live classes में शामिल हों</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Free Courses')">
-          <span>📖</span>
-          <h3>Free Courses</h3>
-          <p>Free में पढ़ाई शुरू करें</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Test Series')">
-          <span>📝</span>
-          <h3>Paid Test Series</h3>
-          <p>Online test series</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Weekly Test')">
-          <span>🧪</span>
-          <h3>Free Weekly Test</h3>
-          <p>हर सप्ताह नया test</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Previous Papers')">
-          <span>📄</span>
-          <h3>Previous Years Papers</h3>
-          <p>पुराने प्रश्न पत्र</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Books')">
-          <span>📚</span>
-          <h3>Books</h3>
-          <p>Study books देखें</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Books Demo')">
-          <span>📕</span>
-          <h3>Books Demo</h3>
-          <p>Books का demo देखें</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Job Alerts')">
-          <span>📢</span>
-          <h3>Job Alerts</h3>
-          <p>नई vacancies की जानकारी</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Blogs')">
-          <span>📰</span>
-          <h3>Blogs</h3>
-          <p>Education से जुड़े blogs</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('PDF Notes')">
-          <span>📑</span>
-          <h3>PDF Class Notes</h3>
-          <p>Class notes डाउनलोड करें</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Syllabus')">
-          <span>📘</span>
-          <h3>Syllabus</h3>
-          <p>सभी subjects का syllabus</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Create Test')">
-          <span>✏️</span>
-          <h3>Create Test</h3>
-          <p>अपना test बनाएँ</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Quiz')">
-          <span>❓</span>
-          <h3>Quiz</h3>
-          <p>Quiz खेलें और score देखें</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Time Table')">
-          <span>🕐</span>
-          <h3>Time Table</h3>
-          <p>अपना timetable देखें</p>
-        </div>
-
-        <div class="card" onclick="openProgramme('Score Calculator')">
-          <span>🏆</span>
-          <h3>Score & Rank Calculator</h3>
-          <p>अपना score calculate करें</p>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- LIVE -->
-    <section id="live" class="section">
-      <h2>🎥 Live Classes</h2>
-      <p>यहाँ आपकी live classes दिखाई जाएँगी।</p>
-    </section>
-
-
-    <!-- TESTS -->
-    <section id="tests" class="section">
-      <h2>📝 Test Series</h2>
-      <p>यहाँ online tests उपलब्ध होंगे।</p>
-    </section>
-
-
-    <!-- MATERIAL -->
-    <section id="materials" class="section">
-      <h2>📖 Study Material</h2>
-      <p>यहाँ PDF, Notes और Books उपलब्ध होंगे।</p>
-    </section>
-
-
-    <!-- JOBS -->
-    <section id="jobs" class="section">
-      <h2>📢 Job Alerts</h2>
-      <p>नई job और vacancy की जानकारी यहाँ मिलेगी।</p>
-    </section>
-
-
-    <!-- BLOG -->
-    <section id="blogs" class="section">
-      <h2>📰 Blogs</h2>
-      <p>Education और career से जुड़े blogs यहाँ होंगे।</p>
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>📞 Contact Us</h2>
-
-      <p>ANUSHIL HOME TUITION से संपर्क करें।</p>
-
-      <button onclick="showMessage('Contact')">
-        Contact करें
-      </button>
-    </section>
-
-  </main>
-
-
-  <!-- PROGRAMME POPUP -->
-  <div id="popup" class="popup">
-
-    <div class="popup-box">
-
-      <button class="close" onclick="closeProgramme()">✕</button>
-
-      <h2 id="popupTitle"></h2>
-
-      <p id="popupText"></p>
-
-      <button onclick="showMessage('Coming Soon')">
-        आगे बढ़ें
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <p>© 2026 ANUSHIL HOME TUITION</p>
-
-  </footer>
-
-
-  <script src="app.js"></script>
-
-</body>
-</html>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Arial, "Noto Sans Devanagari", sans-serif;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 72px;
+  padding: 10px 18px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.brand p {
+  margin: 3px 0 0;
+  color: #687386;
+  font-size: 12px;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+  border: 0;
+  background: #172033;
+  color: white;
+  font-size: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* SIDE MENU */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+  z-index: 2000;
+  background: white;
+  padding: 25px 18px;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+  transition: right 0.3s ease;
+}
+
+.menu.open {
+  right: 0;
+}
+
+.menu button,
+.menu a {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  border: 0;
+  background: #f1f4f8;
+  color: #172033;
+  text-decoration: none;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.menu button {
+  background: #172033;
+  color: white;
+  text-align: center;
+}
+
+/* HERO */
+.hero {
+  margin: 18px;
+  padding: 45px 22px;
+  border-radius: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #172033, #394967);
+  color: white;
+}
+
+.hero h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.hero p {
+  margin: 0 0 22px;
+  font-size: 16px;
+}
+
+.hero button {
+  border: 0;
+  padding: 13px 25px;
+  border-radius: 10px;
+  background: white;
+  color: #172033;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+.section {
+  padding: 25px 18px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 20px 15px;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card span {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 5px 0 8px;
+  font-size: 17px;
+}
+
+.card p {
+  margin: 0;
+  color: #687386;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popup-box {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px 22px;
+  background: white;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.popup-box h2 {
+  margin-top: 10px;
+}
+
+.popup-box p {
+  color: #687386;
+  line-height: 1.6;
+}
+
+.popup-box button:not(.close) {
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 9px;
+  background: #172033;
+  color: white;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: #eeeeee;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 30px;
+  padding: 25px 15px;
+  background: #172033;
+  color: white;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand h1 {
+    font-size: 15px;
+  }
+
+  .brand img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .card {
+    padding: 16px 8px;
+  }
+
+  .card span {
+    font-size: 27px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+
+  .hero h2 {
+    font-size: 23px;
+  }
+}
