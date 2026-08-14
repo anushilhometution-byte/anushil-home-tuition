@@ -7,7 +7,18 @@
 <main>
 <section id="home" class="active"><div class="hero"><span>ADMISSIONS OPEN</span><h1>मजबूत नींव, उज्ज्वल भविष्य</h1><p>Personalized Home Tuition • One-to-One • Small Group Classes</p><button onclick="page('courses')">Courses देखें</button></div><div class="cards"><div>📚<b>Study Material</b><small>Notes & PDFs</small></div><div>📝<b>Online Tests</b><small>Auto Result</small></div><div>📊<b>Progress</b><small>Performance tracking</small></div><div>🔔<b>Notice</b><small>Latest updates</small></div></div><article><h3>Latest Notice</h3><p id="notice">Admission और demo class उपलब्ध है।</p></article></section>
 <section id="courses"><h2>📚 Courses</h2><div id="courseList"></div></section>
-<section id="material"><h2>📖 Study Material</h2><div id="materialList"></div></section>
+<section id="material"><h2>📖 Study Material</h2><section id="ncert">
+  <h2>📚 NCERT BOOK</h2>
+  <p>Class 6th to 12th NCERT Books</p>
+
+  <button onclick="window.location.href='NCERT%20BOOK/Class%206/'">📘 Class 6</button>
+  <button onclick="window.location.href='NCERT%20BOOK/Class%207/'">📘 Class 7</button>
+  <button onclick="window.location.href='NCERT%20BOOK/Class%208/'">📘 Class 8</button>
+  <button onclick="window.location.href='NCERT%20BOOK/Class%209/'">📘 Class 9</button>
+  <button onclick="window.location.href='NCERT%20BOOK/Class%2010/'">📘 Class 10</button>
+  <button onclick="window.location.href='NCERT%20BOOK/Class%2011/'">📘 Class 11</button>
+  <button onclick="window.location.href='NCERT%20BOOK/Class%2012/'">📘 Class 12</button>
+</section><div id="materialList"></div></section>
 <section id="test"><h2>📝 Online Test</h2><div id="quiz"></div><button onclick="submitQuiz()">Submit Test</button><h3 id="score"></h3></section>
 <section id="schedule"><h2>📅 Class Schedule</h2><table><thead><tr><th>Day</th><th>Class</th><th>Time</th></tr></thead><tbody id="scheduleList"></tbody></table></section>
 <section id="profile"><h2>👤 Student Profile</h2><input id="name" placeholder="Student Name"><input id="cls" placeholder="Class"><input id="phone" placeholder="Mobile Number"><button onclick="saveProfile()">Save Profile</button><article id="savedProfile"></article></section>
